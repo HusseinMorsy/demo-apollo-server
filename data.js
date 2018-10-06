@@ -12,7 +12,7 @@ const userFixtures = [
   {
     name: "Leia",
     email: "leia@example.com",
-    age: 28
+    age: 30
   }
 ];
 
