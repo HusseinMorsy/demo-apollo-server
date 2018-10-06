@@ -1,5 +1,5 @@
 const { ApolloServer, gql } = require("apollo-server");
-const users = require("./data").users;
+const resolvers = require("./resolvers");
 
 const typeDefs = gql`
   type User {
@@ -11,12 +11,6 @@ const typeDefs = gql`
     users: [User]
   }
 `;
-
-const resolvers = {
-  Query: {
-    users
-  }
-};
 
 const server = new ApolloServer({ typeDefs, resolvers });
 server.listen().then(({ url }) => {
