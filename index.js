@@ -1,22 +1,5 @@
 const { ApolloServer, gql } = require("apollo-server");
-
-const users = [
-  {
-    name: "Luke",
-    email: "luke@example.com",
-    age: 25
-  },
-  {
-    name: "Han",
-    email: "han@example.com",
-    age: 40
-  },
-  {
-    name: "Leia",
-    email: "leia@example.com",
-    age: 28
-  }
-];
+const users = require("./data").users;
 
 const typeDefs = gql`
   type User {
@@ -31,7 +14,7 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
-    users: () => users
+    users
   }
 };
 
